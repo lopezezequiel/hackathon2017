@@ -5,6 +5,12 @@
 
 # subiseguro
 
+## Los alquimistas 
+Integrantes:
+ * Lopez, Ezequiel - [@_lopezezequiel](https://twitter.com/_lopezezequiel)
+ * Leon, Isla - [@lionseal](https://twitter.com/lionseal)
+ * Correa, J. Francisco - [@cactus_fran](https://twitter.com/@cactus_fran)
+
 ## Descripción
 Subiseguro consiste en una App mobile mediante la cual podemos conocer cuanto tiempo falta para el arribo de la linea de colectivo que estemos 
 esperando.
@@ -23,7 +29,7 @@ Ademas se podría agregar opciones para que los usuarios reporten situaciones (c
 Para fomentar el uso del sistema se ofrecen servicios adicionales como permitirle a los usuarios compartir la ubicación con sus allegados o alertar cuando esta por llegar a su destino (ideal para pasajeros dormilones).
 
 ## Herramientas
- * IC (coveralls, codeclimate, travis,
+ * IC (coveralls, codeclimate, travis)
  * Python
  * django, djangorestframework
  * Android
