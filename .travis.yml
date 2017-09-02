@@ -10,6 +10,18 @@ env:
   # Coveralls COVERALLS_REPO_TOKEN
   - secure: "EaDPEX5ClNGwqyDmPnEDg+TFgME3zd/mkTnwrVHhXYlPcwwoMpjveadgtYRPWl8h3f3HjY7jcPJuMTXtXRm97tifb0+57gLVK/YCXr7+YFqkVJRXwHX7lvBN7odUcdqTNc9phf62wJMo/Kc0dwfwQA8HOG58uQkBFLNHZsIOv/b0+8sSCQVxeJGCZgqLoFZzZZV9LXmksrYiCAz9IG/boRzpDAXmkyHbHmZOrEBymKW4Ejx/lakh44G989qPYSpxrI5+qN7Iyjm+Ftw9orv80Y0MYZq9IUxmM3VeWkP5cwqEo26Xh6oOCz3/XieKoNbrodmFrsXrrIj9BUYYpEvQhsZkbQExieDk/1egmxoOf1p29y6Qz1dGCacgdmFpzIwfKK3h44RoiDtsJh50DVY/KeVXz5ACmJLi2VjP2V9r0rjIYQMAFE5SMkKvP4OeIFpdz3T31lF9bIesVzyd/SYQN+m8RH5Q7lNj0GxeBNzYdRztmoxEbC72sSAdg1IJKUGe08sz4hiBiiyoAUj1mIBDFBdjifvCDEMCnG3DFtzmNAaLBeNCtXcQ/1JW5QekJ3jJ9mlZSDF+xihdqbx4GTixrVJgzYijQLrdILNZih84QMvBLxe9P3Fe3gLK2v68D1uNqV9PHhBxCH8CSSfM396kXnk2E16pccevqY1nFosmOlo="
   - RADONFILESENCODING=UTF-8
+  - DATABASE_NAME=database_name
+  - TEST_DATABASE_NAME=test_database_name
+  - DATABASE_PASSWORD=database_password
+  - DATABASE_USER=database_user
+  - DATABASE_HOST=localhost
+  - DATABASE_PORT=5432
+  - DJANGO_SETTINGS_MODULE=qmsg.settingstravis
+
+
+before_script:
+- "./scripts/create_database.sh"
+
 
 branches:
   only:
