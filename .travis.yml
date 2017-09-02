@@ -15,9 +15,9 @@ branches:
   only:
   - master
 
-after_success:
-- coveralls
-- codeclimate-test-reporter
+#after_success:
+#- coveralls
+#- codeclimate-test-reporter
 
 install:
 - pip install -r requirements.txt
