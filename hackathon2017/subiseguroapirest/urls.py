@@ -18,5 +18,5 @@ from django.contrib import admin
 from subiseguroapirest import views
 
 urlpatterns = [
-	url(r'lineas', views.paths),
+    url(r'lineas', views.paths),
 ]
