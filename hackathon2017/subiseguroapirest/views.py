@@ -20,7 +20,7 @@ def paths(request):
 
     try:
         bus_lines = BusLine.objects.all()
-    except Path.DoesNotExist:
+    except BusLine.DoesNotExist:
         return Response(status=status.HTTP_404_NOT_FOUND)
 
     serializer = BusLineSerializer(bus_lines, many=True)
