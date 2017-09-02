@@ -1,6 +1,7 @@
 from rest_framework import api_view, status
 from rest_framework import Response
 from serializers import BusLineSerializer
+from subiseguroapirest.models import BusLine
 
 
 @api_view(['POST'])
