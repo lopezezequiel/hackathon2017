@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from rest_framework import api_view, status
+from rest_framework import Response
 from serializers import BusLineSerializer
 
-# Create your views here.
+
 @api_view(['POST'])
 def paths(request):
     """Recibe un mensaje codificado en json, lo guarda en base de datos
@@ -24,4 +25,3 @@ def paths(request):
     serializer = BusLineSerializer(bus_lines, many=True)
 
     return Response(serializer.data)
-
