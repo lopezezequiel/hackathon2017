@@ -18,6 +18,5 @@ from django.contrib import admin
 from subiseguroapirest import views
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'apirest/v1/', include('subiseguroapirest.urls'))
+    url(r'lineas', views.paths),
 ]

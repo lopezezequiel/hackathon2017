@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 from rest_framework import serializers
 
-from models import BusLine, BusStop, BusLineStop
+from subiseguroapirest.models import BusLine, BusStop, BusLineStop
 
 
 class BusLineSerializer(serializers.ModelSerializer):

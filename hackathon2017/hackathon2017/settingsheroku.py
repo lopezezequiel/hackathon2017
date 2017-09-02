@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/1.11/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
+# heroku config:set DJANGO_SETTINGS_MODULE=qmsg.settingsheroku
 
 import os
 
@@ -27,7 +28,7 @@ SECRET_KEY = '4xnr-ieh9ewxt12oqytn26gtk4y+v87iogbrcy8%3me^txk#sd'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'testserver']
+ALLOWED_HOSTS = ['subiseguro.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -53,7 +54,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'qmsg.urls'
+ROOT_URLCONF = 'hackathon2017.urls'
 
 TEMPLATES = [
     {
@@ -73,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'qmsg.wsgi.application'
+WSGI_APPLICATION = 'hackathon2017.wsgi.application'
 
 
 # Database
@@ -81,20 +82,13 @@ WSGI_APPLICATION = 'qmsg.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': os.environ['DATABASE_NAME'],
         'USER': os.environ['DATABASE_USER'],
         'PASSWORD': os.environ['DATABASE_PASSWORD'],
         'HOST': os.environ['DATABASE_HOST'],
         'PORT': os.environ['DATABASE_PORT'],
-        'TEST': {
-            'NAME': os.environ['TEST_DATABASE_NAME'],
-        },
     },
-    'sqlite3': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': 'test_db',
-    }
 }
 
 

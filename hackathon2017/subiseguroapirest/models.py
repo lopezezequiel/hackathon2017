@@ -16,4 +16,4 @@ class BusStop(models.Model):
 
 class BusLineStop(models.Model):
     bus_line = models.ForeignKey('BusLine', on_delete=models.CASCADE)
-    bus_stop = models.ForeignKey('BusLine', on_delete=models.CASCADE)
+    bus_stop = models.ForeignKey('BusStop', on_delete=models.CASCADE)
