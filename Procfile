@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn subiseguro.wsgi --log-file -
+web: gunicorn hackathon2017.wsgi --log-file -

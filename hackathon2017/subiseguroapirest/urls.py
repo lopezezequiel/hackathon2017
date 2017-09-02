@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from subiseguroapirest import views
 
 urlpatterns = [
+	url(r'lineas', views.paths),
 ]

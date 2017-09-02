@@ -5,7 +5,7 @@ from subiseguroapirest.serializers import BusLineSerializer
 from subiseguroapirest.models import BusLine
 
 
-@api_view(['POST'])
+@api_view(['GET'])
 def paths(request):
     """Recibe un mensaje codificado en json, lo guarda en base de datos
     y lo retorna con el id seteado
