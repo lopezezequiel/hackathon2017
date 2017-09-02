@@ -25,6 +25,9 @@ branches:
 #before_script:
 #- python manage.py migrate
 
+script:
+  - echo "funciona la cdtm!"
+
 notifications:
   slack:
     secure: QYhjrlR4vJKDepPh52REgjt2WnuRLkKvZj7UD7r/Xaeicd/cA+L/+VzxbzkUp9Xig+T/jroucPNwuFBInmNee/B3f9Lx1zU7BIow7I/hG+pQQ6MBwRBdHEA9xe/couaYUkjzrrlm1DHgCqmEXQn4TCNfSB2Moks2J1DWuF16rU3ERxYjgYbF/izw8aPRsyRKk23CrZRIwxnJ96Ni75/IW89xuLDYQCVM7HsAYQV4WqVGR83qe+smqDAoIFMnro1hwE5ctApc4XRGVGZWBzLrSYqmq4lKvptLn6Ouug0UGtvVBh/NTxzX0kVm4NZBrJKefhvZXRT6a/JYFFCWddKisyYJ+9AcUS+R9501HD8Joj257P9w9Rrz4bNoo+B1yF7v/LACLJ27dntqYD0DJDFmflBauhZ/RYkaEnxR3uQrSidbT6c4uIxzPOEI8e8pkTGbpRogXUx7kWnsgEPkXzifhLu1JYAh4p0xXLZeu49gL1ZXmMGIABf01c2mSAiu08b3GpBMZpGaB/gxRZqe4drkwCutJ8s1qCB03cD9RZQ0yytlqyRExY0cZt07mnMen0ptxM5tF2RjE7W6cb0tmSbpKdaLlstQx12k3JwvaZYrVOTMvupKLLGkQ4YFsTSIAnC8QwelOeqvPtPviBDxF+6eWlNyI11ENCG8EnetC+Ajwgo=
