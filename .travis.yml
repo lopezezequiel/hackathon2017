@@ -12,7 +12,7 @@ env:
   - DATABASE_USER=database_user
   - DATABASE_HOST=localhost
   - DATABASE_PORT=5432
-  - DJANGO_SETTINGS_MODULE=qmsg.settingstravis
+  - DJANGO_SETTINGS_MODULE=hackathon2017.settingstravis
 before_script:
 - "./scripts/create_database.sh"
 branches:
