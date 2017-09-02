@@ -1,6 +1,7 @@
-from rest_framework import api_view, status
-from rest_framework import Response
-from serializers import BusLineSerializer
+from rest_framework.decorators import api_view
+from rest_framework import status
+from rest_framework.response import Response
+from subiseguroapirest.serializers import BusLineSerializer
 from subiseguroapirest.models import BusLine
 
 
