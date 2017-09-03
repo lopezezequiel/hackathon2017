@@ -18,6 +18,14 @@
         android:id="@+id/testLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Location" />
+        android:text="Location"
+        android:textSize="@android:dimen/notification_large_icon_height" />
+
+    <Button
+        android:id="@+id/getDown"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="GetDown"
+        android:text="Bajar" />
 
 </LinearLayout>

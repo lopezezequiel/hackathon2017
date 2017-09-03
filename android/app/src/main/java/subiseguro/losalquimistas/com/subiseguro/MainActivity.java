@@ -15,6 +15,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 //import com.google.android.gms.location.FusedLocationProviderClient;
@@ -32,16 +34,19 @@ public class MainActivity extends AppCompatActivity {
     private TextView testMotion;
     private TextView testLocation;
 
+    private Button getDown;
+
     private long currentMillis;
     private long currentTimeUpdate;
     private long lastTimeUpdate;
 
-    private final long motionDetectionDelay = 1000; //In millis
+    private final long motionDetectionDelay = 5000; //In millis
     private final double minAccelerationMagnitude = 1;
 
 //    private FusedLocationProviderClient mFusedLocationClient;
 
     private long lastAskTime;
+    private boolean onBus;
 
     private final long locationAskDelay = 1000; //In millis
 
@@ -52,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
 
         testMotion = (TextView) findViewById(R.id.testMotion);
         testLocation = (TextView) findViewById(R.id.testLocation);
+        getDown = (Button) findViewById(R.id.getDown);
 
         mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
         SetupLinearAcceleration();
@@ -59,7 +65,18 @@ public class MainActivity extends AppCompatActivity {
 //        mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
 
 //        HasPermission();
+
+        GetDown(null);
     }
+
+    public void GetDown(View v){
+        testLocation.setText("");
+        getDown.setVisibility(View.GONE);
+        onBus = false;
+        lastTimeUpdate = System.currentTimeMillis();
+        currentMillis = 0;
+    }
+
 
     private boolean started;
 
@@ -74,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         started = true;
-        lastAskTime = System.currentTimeMillis();
+        lastTimeUpdate = System.currentTimeMillis();
         currentMillis = 0;
         Log.d(TAG, "Started");
     }
@@ -109,7 +126,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == 200) {
-            if (resultCode == RESULT_OK) testLocation.setText(data.getStringExtra("SelectedBus"));
+            if (resultCode == RESULT_OK){
+                onBus = true;
+                getDown.setVisibility(View.VISIBLE);
+                testLocation.setText(data.getStringExtra("SelectedBus"));
+            }
             else testLocation.setText("");
         } else super.onActivityResult(requestCode, resultCode, data);
     }
@@ -165,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
         SensorEventListener listener = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent event) {
-                if (!started) return;
+                if (!started || onBus) return;
                 currentTimeUpdate = System.currentTimeMillis();
                 long deltaTime = currentTimeUpdate - lastTimeUpdate;
                 double magnitude = GetMagnitude(event.values);
